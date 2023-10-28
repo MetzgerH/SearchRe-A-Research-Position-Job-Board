@@ -4,20 +4,13 @@
 --------
 Prepared by:
 
-* `Erik Holtrop `,`Washington State University`
-* `Arlen Hills `,`Washington State University`
-
----
-
-**Course** : CptS 322 - Software Engineering Principles I
-
-**Instructor**: Sakire Arslan Ay
+* `Erik Holtrop, Washington State University`
+* `Arlen Hills, Washington State University`
 
 ---
 
 ## Table of Contents
 - [Software Requirements Specification](#software-requirements-specification)
-  - [Your Project Title](#your-project-title)
   - [Table of Contents](#table-of-contents)
   - [Document Revision History](#document-revision-history)
 - [1. Introduction](#1-introduction)
@@ -29,8 +22,6 @@ Prepared by:
   - [2.2 Use Cases](#22-use-cases)
   - [2.3 Non-Functional Requirements](#23-non-functional-requirements)
 - [3. User Interface](#3-user-interface)
-- [4. Product Backlog](#4-product-backlog)
-- [4. References](#4-references)
 
 <a name="revision-history"> </a>
 
@@ -38,7 +29,7 @@ Prepared by:
 
 | Name | Date | Changes | Version | Editor
 | ------ | ------ | --------- | --------- | --------- |
-| Template |2023-10-05 |Initial draft | 0.0        | Sakire Arslan Ay
+| Template |2023-10-05 |Initial draft | 0.0        | - 
 | Authorship Addition      | 2023-10-07      | Added Authorship | 0.1 | Erik Holtrop
 | First Draft     | 2023-10-07|Filled out most of body|1.0| Arlen Hills
 | First Draft Grammatical Review | 2023-10-07| Fixed a few typos | 1.1 | Erik Holtrop 
@@ -47,6 +38,7 @@ Prepared by:
 | First Daft Use Cases edition cont. | 2023-10-11 | Fixed formatting errors for list of use cases | 1.2.1 | Arlen Hills
 | First Week submission draft. | 2023-10-11 |  Fixed use case misnumbering, added image links, non-functional requirements, removed rubric. | 1.3 | Arlen Hills
 | First Week Submission draft (reviewed) | 2023-10-11 | Removed some broken links and fixed revision history table | 1.3.1 | Erik Holtrop
+| Cleaned Up | 10-28-2023 | Removed references to class/assignment and cleaned up | 1.4 | Erik Holtrop
 
 ----
 # 1. Introduction
@@ -327,12 +319,6 @@ This section includes the list of use cases for the software. There are cases fo
 ![Student's Applications](../images/studentapplications.png)
 
 ----
-# 4. Product Backlog
-
-https://github.com/WSU-CptS-322-Fall-2023/termproject-teamliason/issues 
-
-----
-# 4. References
 
 None.
 
