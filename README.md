@@ -1,6 +1,5 @@
-# CptS 322 Term Project
-### Project Title: SEARCHRe
-### Team Name:  Team Liaison
+## Project Title: SEARCHRe
+### Team Liaison
 ### Team Members 
 * Erik Holtrop
 * Arlen Hills
