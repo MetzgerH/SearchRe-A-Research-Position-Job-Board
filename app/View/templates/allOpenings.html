@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+<!-- extremely temp -->
+
+{% block content %}
+    <h1> All Openings </h1>
+
+    {% for opening in allopenings %} 
+        {% include '_miniopening.html' %}
+    {% endfor %}
+
+{% endblock %}

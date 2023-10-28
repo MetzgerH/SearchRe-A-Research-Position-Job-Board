@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1> Display Student Profile </h1>
+    <h2> Student Username: {{student.username}}</h2>
+    <p> <b>Name:</b> {{student.first_name}} {{student.last_name}}</p>
+    <p> <b>Student ID:</b> {{student.student_id}}</p>
+    <p> <b>Email:</b> {{student.email}}</p>
+    {% if student.phone_number %}
+        <p> <b>Phone Number:</b> {{student.phone_number}} </p>
+    {% endif %}
+    {% if student.graduation_date %}
+        <p> <b>Expected Graduation Date:</b> {{student.graduation_date}} </p>
+    {% endif %}
+    {% if student.gpa %}
+        <p> <b>GPA:</b> {{student.gpa}} </p>
+    {% endif %}
+
+    {% if student.majors %}
+        <p> <b>Major(s):</b></p>
+        {% for major in student.majors %}
+            <p> {{major.name}} </p>
+        {% endfor %}
+    {% endif %}
+
+    {% if student.programming_languages %}
+        <p> <b>Known Programming Language(s):</b></p>
+        {% for lang in student.programming_languages %}
+            <p> {{lang.name}} </p>
+        {% endfor %}
+    {% endif %}
+
+    <!--{% if student == current_user %}
+        <p><a href="">Edit your profile</a></p>
+    {% endif %}-->
+{% endblock %}

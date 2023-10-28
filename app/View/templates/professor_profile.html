@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1> Display Professor Profile </h1>
+    <h2> Username: {{professor.username}}</h2>
+    <p> <b>Name:</b> {{professor.first_name}} {{professor.last_name}}</p>
+    <p> <b>Email:</b> {{professor.email}}</p>
+    {% if professor.phone_number %}
+        <p> <b>Phone Number:</b> {{professor.phone_number}} </p>
+    {% endif %}
+
+    <!--{% if professor == current_user %}
+        <p><a href="">Edit your profile</a></p>
+    {% endif %}-->
+{% endblock %}
