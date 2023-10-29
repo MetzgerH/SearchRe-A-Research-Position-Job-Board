@@ -8,15 +8,11 @@ Prepared by:
 * `Arlen Hills`,`WSU`
 ---
 
-**Course** : CptS 322 - Software Engineering Principles I
-
-**Instructor**: Sakire Arslan Ay
 
 ---
 
 ## Table of Contents
 - [Design Document](#design-document)
-  - [Your Project Title](#your-project-title)
   - [Table of Contents](#table-of-contents)
     - [Document Revision History](#document-revision-history)
 - [1. Introduction](#1-introduction)
@@ -27,8 +23,6 @@ Prepared by:
     - [2.2.2 Controller](#222-controller)
     - [2.2.3 View and User Interface Design](#223-view-and-user-interface-design)
 - [3. Progress Report](#3-progress-report)
-- [4. Testing Plan](#4-testing-plan)
-- [5. References](#5-references)
 
 <a name="revision-history"> </a>
 
@@ -44,12 +38,6 @@ Prepared by:
 
 # 1. Introduction
 
-Explain the purpose for providing this design document. If this is a revision of an earlier document, please make sure to summarize what changes have been made during the revision (keep this discussion brief). 
-
-Then provide a brief description of your project and state your project goal.
-
-At the end of the introduction, provide an overview of the document outline.
-
 [Section II](#2-architectural-and-component-level-design) includes UML diagram, architecture description.
 
 [Section III](#22-subsystem-design) includes Model, Controller, and View breakdown and description.
@@ -64,13 +52,10 @@ At the end of the introduction, provide an overview of the document outline.
  - UseCase Forms contains forms needed for certain input use-cases.
  - Authorization Forms contains forms needed for student or professor registration and user login.
 
- Our rationale for this design is to allow for re-use of subsystems of other projects such as Authorization Routes. In this design the changes for user authorization and general use cases can be developed in parallel.
+ Our rationale for this design is to allow for the re-use of subsystems of other projects such as Authorization Routes. In this design the changes for user authorization and general use cases can be developed in parallel.
 
 ## 2.2 Subsystem Design 
 
-(**Note1**: This is just a suggested template. If you adopted a pattern other than MVC, you should revise this template and the list the major subsystems in your architectural design.)
-
-(**Note2**: You should describe the design for the end product (completed application) - not only your iteration1 version. You will revise this document in iteration-2 and make changes  and/or add more details in iteration-2.)
 
 ### 2.2.1 Model
 
@@ -140,13 +125,9 @@ Opening attributes:
 | programming_languages | Relationship | The programming languages that applicants are expected to know | Relationship with ProgLang class instances through 'expects_language' association table |
 
 
-(***in iteration -2***) Revise the database model. Provide a UML diagram of your database model showing the associations and relationships among tables. Your UML diagram should also show the methods of your models.
-
 ### 2.2.2 Controller 
 
 The controller's role is to mediate between the view and the model. It is reponsible for getting the data from the model that the view needs to display, and using input from the view to update/access data in the model. For this product the controller also contains the routes, auth routes, forms, and error handlers.
-
-(***in iteration-2***) Revise your route specifications, add the missing routes to your list, and update the routes you modified. Make sure to provide sufficient detail for each route. In iteration-2, you will be deducted points if you don’t include all major routes needed for implementing the required use-cases or if you haven’t described them in detail.
 
 | Name  | Methods           | URL Path   | Description  |
 |:--|:------------------|:-----------|:-------------|
@@ -164,8 +145,6 @@ The controller's role is to mediate between the view and the model. It is repons
 ### 2.2.3 View and User Interface Design 
 
 The role of the view is to use templates and forms from the controller to create friendly user interfaces. It is responsible for the look and representation of the product. We plan to use Bootstrap CSS framework in the future to enhance the view.
-
-(***in iteration-2***) Revise your page list and descriptions and include any additional pages that you will include in your view.  In iteration-2, you will be deducted points if your view description is still superficial and doesn't list and explain all pages of your application. 
 
 | Template | Description | Use-Case(s) |
 | -------- | ----------- | ----------- |
@@ -196,18 +175,6 @@ The role of the view is to use templates and forms from the controller to create
 # 3. Progress Report
 
 For our team, iteration 1 came with some challenges. Unexpectedly, team member Arlen Hills contracted a rough illness during the week of iteration 1 which led to some complications in work output. Said team member didn't do the best job of communicating to his partner about his issues, or reach out for help, which had he done so would've mitigated the issues. Thus, there was a large period where vital bugs had gone unnoticed and minimal work was done. However, after communication between partners there was a clear layout of tasks and times which resulted in a smooth finish and a satisfactory product to end iteration 1. Iteration 1 ended up included major use cases such as registration, login, profile view, and opening creation and listing.
-
-# 4. Testing Plan
-
-(***in iteration 2***)
-In this section , provide a brief description of how you plan to test the system. Thought should be given to  mostly how automatic testing can be carried out, so as to maximize the limited number of human hours you will have for testing your system. Consider the following kinds of testing:
-  * *Unit Testing*: Explain for what modules you plan to write unit tests, and what framework you plan to use.  (Each team should write automated tests (at least) for testing the routes)
-  * *Functional Testing*: How will you test your system to verify that the use cases are implemented correctly? 
-  * *UI Testing*: How do you plan to test the user interface?  (Manual tests are OK)
-
-# 5. References
-
-None.
 
 
 ----
