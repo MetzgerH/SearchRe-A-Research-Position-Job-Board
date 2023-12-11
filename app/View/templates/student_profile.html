@@ -30,7 +30,7 @@
         {% endfor %}
     {% endif %}
 
-    <!--{% if student == current_user %}
-        <p><a href="">Edit your profile</a></p>
-    {% endif %}-->
+    {% if student == current_user %}
+        <p><a href="{{url_for('auth.updateprofile')}}">Edit your profile</a></p>
+    {% endif %}
 {% endblock %}

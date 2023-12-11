@@ -10,7 +10,7 @@ body {
     font-family: Tahoma;
     font-size: 12px;
     height: 32px;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 a:hover {
@@ -37,7 +37,7 @@ a:hover {
     padding: 3px;
     margin: 4px 3px 4px 3px;
     color: crimson; 
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 .textinput{
@@ -62,9 +62,7 @@ a:hover {
 	font-size : 18px;
 }
 
-.openingtempsmaller{
-	text-align : left;
-	border : 1px black solid;
-	width : 100%;
-	font-size : 12px;
+.fulldesc{
+    text-align: left;
+    width: 540px;
 }

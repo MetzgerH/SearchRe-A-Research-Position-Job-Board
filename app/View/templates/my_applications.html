@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <h1> Your Submitted Applications </h1>
+
+    {% for application in myapplications %} 
+        {% include '_miniapplication.html' %}
+    {% endfor %}
+
+{% endblock %}

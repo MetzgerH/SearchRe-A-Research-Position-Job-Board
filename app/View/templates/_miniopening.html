@@ -5,11 +5,11 @@
                 {{opening.start}} - {{opening.end}} {{opening.time_commitment}} hrs/week
             </td>
             <td width="20%">
-                <a href="#"> View </a>
+                <a href="{{url_for('routes.opening', oid = opening.id)}}" class="button"> View </a>
             </td>
     </tr>
     <tr>
-            <td> {{opening.description}} </td>
+            <td style="display:block; text-overflow: ellipsis;width: 700px;overflow: hidden; white-space: nowrap;"> {{opening.description}} </td>
     </tr>
     <tr style="font-size : 12px">
         <td> 

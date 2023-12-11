@@ -1,0 +1,21 @@
+<table class="openingtemp">
+    <tr>
+            <td width="60%"> {{ application.opening.title }} </td>
+            <td width="40%">
+                <a href="{{url_for('routes.opening',oid = application.opening.id)}}" class="button"> View Opening </a>
+            </td>
+    </tr>
+    <tr style="font-size : 16px">
+        <td> 
+        <b>Interest Statement:</b>
+        {{application.interest_statement}}
+        <br>
+        <b>Reference Name:</b>
+        {{application.reference_name}}
+        <br>
+        <b>Reference Email:</b>
+        {{application.reference_email}}
+        </td>
+    </tr>
+
+</table>

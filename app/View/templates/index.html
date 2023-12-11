@@ -2,9 +2,15 @@
 
 {% block content %}
 
-    <h1> Home </h1>
+    <h1 style="text-align: center;"> Welcome to SEARCHRe </h1>
+    <p style="text-align: center;display:block;width: 700px;margin-left: auto;margin-right: auto;">
+         SEARCHRe offers the ability for research faculty members to get their research opportunities out
+         to a wider audience of students who may be interested in applying. Students may create an account and
+         fill out applications to open research positions they are interested in. (WIP)
+    </p>
+    <div style="text-align: center;">
     <a href="{{ url_for('auth.registerstudent') }}" class = "button"> New Student </a>
     <a href="{{ url_for('auth.registerprof') }}" class = "button"> New Faculty </a>
-    <a href="{{ url_for('routes.allopenings') }}" class = "button"> View Open Research Positions </a>
+    </div>
 
 {% endblock %}

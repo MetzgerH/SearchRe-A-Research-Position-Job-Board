@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <h1> Your Created Openings </h1>
+
+    {% for opening in myopenings %} 
+        {% include '_miniopening.html' %}
+    {% endfor %}
+
+{% endblock %}

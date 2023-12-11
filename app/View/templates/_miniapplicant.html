@@ -1,0 +1,23 @@
+<table class="openingtemp">
+    <tr>
+            <td width="60%"> {{application.applicant.first_name}} {{application.applicant.last_name}} </td>
+            <td width="40%">
+                <a href="{{url_for('routes.application',oid = application.opening.id, aid = application.id)}}" class="button"> View </a>
+            </td>
+    </tr>
+    <tr style="font-size : 12px">
+        <td> 
+        <!--<b>GPA: </b>
+        {{application.applicant.gpa}} -->
+        <b>Majors:</b>
+        {% for major in application.applicant.majors %}
+            {{major.name}}, 
+        {% endfor %}
+        <b>Programming Languages:</b>
+        {% for lang in application.applicant.programming_languages %}
+             {{lang.name}},
+        {% endfor %}
+        </td>
+    </tr>
+
+</table>

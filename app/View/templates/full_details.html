@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+<!-- extremely temp -->
+{% block content %}
+    <div>
+        <h1> {{opening.title}} </h1>
+        <p class="fulldesc"> <b>Description: </b> {{ opening.description }} </p>
+        <p> <b>Start Date: </b> {{ opening.start }} <b>End Date:</b> {{ opening.end }} </p>
+        <p> <b>Hours/Week: </b> {{ opening.time_commitment }} </p>
+        <table>
+            <tr>
+                <td> 
+                <b>Majors:</b>
+                {% for major in opening.majors %}
+                    {{major.name}}, 
+                {% endfor %}
+                <b>Programming Languages:</b>
+                {% for lang in opening.programming_languages %}
+                     {{lang.name}},
+                {% endfor %}
+                </td>
+            </tr>
+        </table>
+        {% if current_user.user_type == "Student"%}
+            <!-- need a relationship for student to opening to hide button? -->
+            <a href="{{ url_for('routes.apply', oid = opening.id) }}" class = "button">Apply</a>
+        {% endif %}
+        {% if current_user.user_type == "Professor"%}
+            <h1> List of Applicants: </h1>
+            {% for application in applications %} 
+                {% include '_miniapplicant.html' %}
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

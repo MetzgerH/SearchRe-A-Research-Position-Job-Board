@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1> Application For: </h1>
+    <p> <b>Name:</b> {{application.applicant.first_name}} {{application.applicant.last_name}}</p>
+    <p> <b>Student ID:</b> {{application.applicant.student_id}}</p>
+    <p> <b>Email:</b> {{application.applicant.email}}</p>
+    {% if application.applicant.phone_number %}
+        <p> <b>Phone Number:</b> {{application.applicant.phone_number}} </p>
+    {% endif %}
+    {% if application.applicant.graduation_date %}
+        <p> <b>Expected Graduation Date:</b> {{application.applicant.graduation_date}} </p>
+    {% endif %}
+
+    <p class="fulldesc"> <b>Interest Statement: </b> {{ application.interest_statement }} </p>
+    <p> <b>Reference: </b> {{ application.reference_name }}</p>
+    <p> <b>Ref. Email: </b> {{ application.reference_email }} </p>
+
+    {% if application.applicant.gpa %}
+        <p> <b>GPA:</b> {{application.applicant.gpa}} </p>
+    {% endif %}
+
+    {% if application.applicant.majors %}
+        <p> <b>Major(s):</b></p>
+        {% for major in application.applicant.majors %}
+            <p> {{major.name}} </p>
+        {% endfor %}
+    {% endif %}
+
+    {% if application.applicant.programming_languages %}
+        <p> <b>Known Programming Language(s):</b></p>
+        {% for lang in application.applicant.programming_languages %}
+            <p> {{lang.name}} </p>
+        {% endfor %}
+    {% endif %}
+
+    {% if current_user.user_type == "Student" %}
+        <a class="button"> Withdraw(WIP) </a>
+    {% endif %}
+
+    {% if current_user.user_type == "Professor" %}
+        <a class="button"> Accept(WIP) </a>
+        <a class="button"> Reject(WIP) </a>
+    {% endif %}
+
+{% endblock %}

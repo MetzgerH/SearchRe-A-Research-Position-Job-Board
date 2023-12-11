@@ -35,20 +35,30 @@ class StudentRegistration(FlaskForm):
         widget=ListWidget(prefix_label=False), option_widget=CheckboxInput() )
     languages = QuerySelectMultipleField( 'Known Programming Language(s)', query_factory= lambda: ProgLang.query.all() , get_label= lambda x: x.name, 
         widget=ListWidget(prefix_label=False), option_widget=CheckboxInput() )
-    phone = IntegerField('Phone Number (Optional)', validators=[NumberRange(min=0, max=9999999999999)])
+    phone = IntegerField('Phone Number (Optional)', validators=[NumberRange(min=0, max=9999999999999), Optional()])
     graduation_date = NullableDateField('Expected Graduation Date (Optional) in format MM-DD-YYYY')
     gpa = DecimalField('GPA (Optional)', validators=[NumberRange(min=0, max=4), Optional()])
     research_history = TextAreaField('Research History (Optional)',validators=[Length(min=0, max=500)])
-    submit = SubmitField('Register')
+    submit = SubmitField('Submit')
+    isUpdateForm = False
     def validate_username(self,username):
-        user = User.query.filter_by(username=username.data).first()
-        if user is not None:
-            raise ValidationError('The username already exists! Please use a different username.')
+        if self.isUpdateForm:
+            if User.query.filter_by(username=username.data).count() > 1:
+                raise ValidationError('The username already exists! Please use a different username.')
+        else:
+            user = User.query.filter_by(username=username.data).first()
+            if user is not None:
+                raise ValidationError('The username already exists! Please use a different username.')
+
         
     def validate_email(self,email):
-        user = User.query.filter_by(email=email.data).first()
-        if user is not None:
-            raise ValidationError('That email is already connected to an account! Please use a different email.')
+        if self.isUpdateForm:
+            if User.query.filter_by(username=email.data).count() > 1:
+                raise ValidationError('The username already exists! Please use a different username.')
+        else:
+            user = User.query.filter_by(email=email.data).first()
+            if user is not None:
+                raise ValidationError('That email is already connected to an account! Please use a different email.')
 
 class ProfRegistration(FlaskForm):
     first_name = StringField('First Name', validators=[DataRequired(),Length(min=0, max=60)])
@@ -57,18 +67,28 @@ class ProfRegistration(FlaskForm):
     email = StringField('Contact E-Mail', validators=[DataRequired(),Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField('Repeat Password', validators=[DataRequired(), EqualTo('password')])
-    phone = IntegerField('Phone Number (Optional)', validators=[NumberRange(min=0, max=9999999999999)])
-    submit = SubmitField('Register')
+    phone = IntegerField('Phone Number (Optional)', validators=[NumberRange(min=0, max=9999999999999), Optional()])
+    submit = SubmitField('Submit')
+    isUpdateForm = False
 
     def validate_username(self,username):
-        user = User.query.filter_by(username=username.data).first()
-        if user is not None:
-            raise ValidationError('The username already exists! Please use a different username.')
+        if self.isUpdateForm:
+            if User.query.filter_by(username=username.data).count() > 1:
+                raise ValidationError('The username already exists! Please use a different username.')
+        else:
+            user = User.query.filter_by(username=username.data).first()
+            if user is not None:
+                raise ValidationError('The username already exists! Please use a different username.')
+
         
     def validate_email(self,email):
-        user = User.query.filter_by(email=email.data).first()
-        if user is not None:
-            raise ValidationError('That email is already connected to an account! Please use a different email.')
+        if self.isUpdateForm:
+            if User.query.filter_by(username=email.data).count() > 1:
+                raise ValidationError('The username already exists! Please use a different username.')
+        else:
+            user = User.query.filter_by(email=email.data).first()
+            if user is not None:
+                raise ValidationError('That email is already connected to an account! Please use a different email.')
 
 #Form for logging in
 class LoginForm(FlaskForm):

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1> Application Form </h1>
+    {% if form %}
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            
+            <p> {{ form.interest.label }} </p>
+            <p>{{ form.interest(class='textinput') }}</p>
+
+            {% for error in form.interest.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+
+            <p> {{ form.ref_name.label }} </p>
+            <p>{{ form.ref_name(class='textinput') }}</p>
+
+            {% for error in form.ref_name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+
+            <p> {{ form.ref_email.label }} </p>
+            <p>{{ form.ref_email(class='textinput') }}</p>
+
+            {% for error in form.ref_email.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+
+            <p>{{ form.apply(class='button') }}</p>
+        </form>
+
+    {% endif %}
+
+{% endblock %}

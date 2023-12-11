@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1> Create a new research opening</h1>
+    {% if form %}
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            
+                <p> {{ form.majors.label }} </p>
+                <p>{{ form.majors(class='textinput') }}</p>
+
+                {% for error in form.majors.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+
+                <p>{{ form.title.label }}</p>
+                <p>{{ form.title(class='textinput') }}</p>
+
+                {% for error in form.title.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+
+                <p>{{ form.description.label }}</p>
+                <p>{{ form.description(class='textinput') }}</p>
+
+                {% for error in form.description.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+
+                <p>{{ form.start.label }}</p>
+                <p>{{ form.start(class='textinput') }}</p>
+
+                {% for error in form.start.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+
+                <p>{{ form.end.label }}</p>
+                <p>{{ form.end(class='textinput') }}</p>
+
+                {% for error in form.end.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+
+                <p>{{ form.time_commitment.label }}</p>
+                <p>{{ form.time_commitment(class='textinput') }}</p>
+
+                {% for error in form.time_commitment.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+
+                <p>{{ form.languages.label }}</p>
+                <p>{{ form.languages(class='textinput') }}</p>
+
+                {% for error in form.languages.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+
+            <p>{{ form.create(class='button') }}</p>
+        </form>
+
+    {% endif %}
+
+{% endblock %}

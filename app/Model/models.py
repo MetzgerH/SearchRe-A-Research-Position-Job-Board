@@ -113,6 +113,11 @@ class Student(User):
     programming_languages = db.relationship(
         'ProgLang', secondary=knows_language,
         primaryjoin=(knows_language.c.id_of_student == id), lazy='dynamic', overlaps="students")
+    applications = db.relationship('Application', backref = 'applicant', lazy = "dynamic")
+
+    __mapper_args__ = {
+        "polymorphic_identity": "Professor",
+    }
     
     __mapper_args__ = {
         "polymorphic_identity": "Student",
@@ -140,3 +145,12 @@ class Opening(db.Model):
     programming_languages = db.relationship(
         'ProgLang', secondary=expects_language,
         primaryjoin=(expects_language.c.opening_id == id), lazy='dynamic', overlaps="openings")
+    applications = db.relationship('Application', backref = 'opening', lazy = "dynamic")
+    
+class Application(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    interest_statement = db.Column(db.String(500))
+    reference_name = db.Column(db.String(100))
+    reference_email = db.Column(db.String(120), unique=True)
+    applicant_id = db.Column(db.Integer, db.ForeignKey('student.id'))
+    opening_id = db.Column(db.Integer, db.ForeignKey('opening.id'))

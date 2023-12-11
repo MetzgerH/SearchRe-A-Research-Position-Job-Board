@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <h1> Recommended Openings </h1>
+    <a href="{{ url_for('routes.openings') }}" class = "button"> Revert to normal sorting </a>
+    {% for openingList in openingMatrix %}
+        {% for opening in openingList %} 
+            {% include '_miniopening.html' %}
+        {% endfor %}
+    {% endfor %}
+    
+
+{% endblock %}

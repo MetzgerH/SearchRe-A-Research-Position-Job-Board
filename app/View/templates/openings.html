@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+<!-- extremely temp -->
+
+{% block content %}
+    <h1> All Openings </h1>
+    {% if url_for(request.endpoint, **request.view_args)  == url_for('routes.openings') %}
+        <td><a href="{{ url_for('routes.recommended') }}" class = "button"> Sort by algorithmic recommendation </a></td>
+    {% endif %}
+    {% if url_for(request.endpoint, **request.view_args)  == url_for('routes.recommended') %}
+        <td><a href="{{ url_for('routes.openings') }}" class = "button"> Revert to default sorting </a></td>
+    {% endif %}
+    <br><br>
+    {% for opening in allopenings %} 
+        {% include '_miniopening.html' %}
+    {% endfor %}
+
+{% endblock %}

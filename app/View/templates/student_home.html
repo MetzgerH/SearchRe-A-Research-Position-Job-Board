@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1 style="text-align: center;"> Hello, {{current_user.first_name}} {{current_user.last_name}} </h1>
+    <p style="text-align: center;display:block;width: 700px;margin-left: auto;margin-right: auto;">
+         WIP TEXT
+    </p>
+    <div style="text-align: center;">
+        <a href="{{ url_for('routes.openings') }}" class = "button"> View Open Research Positions </a>
+        <a href="{{ url_for('routes.myapplications') }}" class = "button"> View Your Applications </a>
+    </div>
+
+{% endblock %}
